@@ -29,6 +29,8 @@ public class ProfilePagePOM {
 	@FindBy(id="profile_apply_change")
 	private WebElement savebuuton;
 	
+	@FindBy(xpath="//a[contains(text(),'Create a course')]")
+	private WebElement Createacourse;
 	
 	public void editprofile() {
 		
@@ -45,6 +47,9 @@ public class ProfilePagePOM {
 	}
 	public void save() {
 		this.savebuuton.click();
+	}
+	public void createcoursebutton() {
+		this.Createacourse.click();
 	}
 	
 }
