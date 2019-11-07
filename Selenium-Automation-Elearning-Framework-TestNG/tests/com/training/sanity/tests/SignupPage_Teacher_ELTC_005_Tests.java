@@ -45,26 +45,26 @@ public class SignupPage_Teacher_ELTC_005_Tests {
 	}
 	
 	
-	/*
-	 * @AfterMethod public void tearDown() throws Exception { Thread.sleep(1000);
-	 * driver.quit(); }
-	 */
+	 @AfterMethod public void tearDown() throws Exception { Thread.sleep(1000);
+	  driver.quit(); }
+	 
 	 
 	@Test
-	public void validSignUpTest() {
+	public void validSignUpTeacherTest() {
 		
 	
 		signupPOM.signupbutton();
-		signupPageTeacherPOM.firstname();
-		signupPageTeacherPOM.lastname();
-		signupPageTeacherPOM.email();
-		signupPageTeacherPOM.username();
-		signupPageTeacherPOM.password();
-		signupPageTeacherPOM.confirmpassword();
-		signupPageTeacherPOM.phonenumber();
-		signupPageTeacherPOM.teacher();
-		signupPageTeacherPOM.register();
-		
+		signupPageTeacherPOM.validatePageTitle();
+		signupPageTeacherPOM.sendFirstname();
+		signupPageTeacherPOM.sendLastname();
+		signupPageTeacherPOM.sendEmail();
+		signupPageTeacherPOM.sendUsername();
+		signupPageTeacherPOM.sendPassword();
+		signupPageTeacherPOM.sendConfirmPassword();
+		signupPageTeacherPOM.sendPhoneNumber();
+		signupPageTeacherPOM.clickTeacherButton();
+		signupPageTeacherPOM.clickRegisterButton();
+		signupPageTeacherPOM.validateSuccessMsg();
 		
 		screenShot.captureScreenShot("First");
 	}

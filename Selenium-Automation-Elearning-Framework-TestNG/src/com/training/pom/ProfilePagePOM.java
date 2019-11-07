@@ -32,23 +32,23 @@ public class ProfilePagePOM {
 	@FindBy(xpath="//a[contains(text(),'Create a course')]")
 	private WebElement Createacourse;
 	
-	public void editprofile() {
+	public void editProfileButton() {
 		
 		this.editprofile.click();
 	}
-	public void profilepassword() {
-		this.password.sendKeys("reva112233");
+	public void sendProfilePassword() {
+		this.password.sendKeys("kehsihba");
 	}
-	public void newpassword() {
-		this.newpassword.sendKeys("reva321");
+	public void sendNewPassword() {
+		this.newpassword.sendKeys("abhishek");
 	}
-	public void confirmnewpassword() {
-		this.confirmnewpassword.sendKeys("reva321");
+	public void sendConfirmNewPassword() {
+		this.confirmnewpassword.sendKeys("abhishek");
 	}
 	public void save() {
 		this.savebuuton.click();
 	}
-	public void createcoursebutton() {
+	public void createCourseButton() {
 		this.Createacourse.click();
 	}
 	

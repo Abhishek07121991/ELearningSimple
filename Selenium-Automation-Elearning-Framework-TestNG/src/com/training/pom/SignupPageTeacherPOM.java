@@ -1,5 +1,8 @@
 package com.training.pom;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,44 +49,55 @@ private WebDriver driver;
 	@FindBy(id="registration_submit")
 	private WebElement clickonregisterbutton;
 	
-		public void firstname() {
+	@FindBy(xpath="//p[contains(text(),'An e-mail has been sent to remind you of your logi')]")
+	private WebElement validatemessage;
+	
+	public void validatePageTitle() {
+		String AssertTitle =this.driver.getTitle();
+		assertEquals(AssertTitle,"My Organization - My education - Registration");
+	}
+	
+		public void sendFirstname() {
 			this.enterfirstname.sendKeys("revaabhi");
 		
 	}
 	
-	public void lastname() {
-		this.enterlastname.sendKeys("sharma");
+	public void sendLastname() {
+	this.enterlastname.sendKeys("sharma");
 	}
 		
-		public void email() {
-			this.enteremail.sendKeys("revasharma11222233@gmail.com");
+		public void sendEmail() {
+		this.enteremail.sendKeys("revasharma0987@gmail.com");
 			
 		
 	}
-	public void username()	{
-		this.enterusername.sendKeys("reva11222");
+	public void sendUsername()	{
+	this.enterusername.sendKeys("revasharma1207121991");
 	}
-	public void password() {
-		this.enterpassword.sendKeys("reva112233");
+	public void sendPassword() {
+	this.enterpassword.sendKeys("reva112233");
 	}
-	public void confirmpassword() {
+	public void sendConfirmPassword() {
 		this.enterconfirmpassword.sendKeys("reva112233");
 	}
 	
-	public void phonenumber() {
+	public void sendPhoneNumber() {
 		this.enterphonenumber.sendKeys("1122223344");
 	}
-	/*
-	 * public void language() { this.selectlanguage.click(); }
-	 */
-
 	
-	 public void teacher()
+	 public void clickTeacherButton()
 	 { 
 		 this.selectteacher.click(); 
 	 }
 	
-	public void register() {
+	public void clickRegisterButton() {
 		this.clickonregisterbutton.click();
+	}
+	public void validateSuccessMsg(){
+		 System.out.println(this.validatemessage.getText());
+		 String expectedmsg="An e-mail has been sent to remind you of your login and password.";
+
+			assertTrue(true, expectedmsg);
+			System.out.println("Message should get display in profile page");
 	}
 }

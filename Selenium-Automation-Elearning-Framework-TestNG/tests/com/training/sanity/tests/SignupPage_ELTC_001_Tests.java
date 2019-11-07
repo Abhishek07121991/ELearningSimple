@@ -20,7 +20,7 @@ public class SignupPage_ELTC_001_Tests {
 
 	private WebDriver driver;
 	private String baseUrl;
-	private HomepagePOM signupPOM;
+	private HomepagePOM homepagePOM;
 	private SignupPagePOM signupPagePOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
@@ -35,7 +35,7 @@ public class SignupPage_ELTC_001_Tests {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		signupPOM =new HomepagePOM(driver);
+		homepagePOM =new HomepagePOM(driver);
 		signupPagePOM = new SignupPagePOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
@@ -49,20 +49,21 @@ public class SignupPage_ELTC_001_Tests {
 	  driver.quit(); }
 	 
 	@Test
-	public void validSignUpTest() {
+	public void validSignUpStudentTest() {
 		
 	
-		signupPOM.signupbutton(); 
-		signupPagePOM.firstname();
-		signupPagePOM.lastname();
-		signupPagePOM.email();
-		signupPagePOM.username();
-		signupPagePOM.password();
-		signupPagePOM.confirmpassword();
-		signupPagePOM.phonenumber();
-		//signupPagePOM.language();
-		signupPagePOM.student();
-		signupPagePOM.register();
+		homepagePOM.signupbutton();
+		signupPagePOM.validatePageTitle();
+		signupPagePOM.sendFirstName();
+		signupPagePOM.sendLastName();
+		signupPagePOM.sendEmail();
+		signupPagePOM.sendUsername();
+		signupPagePOM.sendPassword();
+		signupPagePOM.sendConfirmPassword();
+		signupPagePOM.sendPhoneNumber();
+	    signupPagePOM.clickStudent();
+		signupPagePOM.clickRegisterBtn();
+		signupPagePOM.validateSuccessMsg();
 		screenShot.captureScreenShot("First");
 	}
 }

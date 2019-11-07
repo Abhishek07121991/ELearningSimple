@@ -40,35 +40,27 @@ private WebDriver driver;
 
 
 	
-	public void coursename() {
+	public void enterCourseName() {
 		
 		this.coursename.sendKeys("Automation");
 	}
-	public void Advancesettingbutton() {
+	public void advanceSettingButton() {
 		this.advancesetting.click();
 	}
-	public void categorycoursebutton() {
+	public void categoryCourseButton() {
 		this.categorycode.click();
 	}
-	public void categorybutton() {
+	public void categoryButton() {
 		this.selectcategorycode.click();
 	}
-	public void coursecode() {
-		this.coursecode.sendKeys("seeeleniumcourse1SSssss");
+	public void enterCourseCode() {
+		this.coursecode.sendKeys("seeelennniumcoursejk1SSssss");
 	}
-	public void createcoursebutton() {
+	public void createCourseButton() {
 		this.createthiscourse.click();
 	}
-	public void addintroductionbutton() {
+	public void addIntroductionButton() {
 		this.addintroduction.click();
 	}
-	public void frame() {
-		//this.Frame.sendKeys("This is a selenium course");
-		//this.driver.switchTo().frame(0);
-		this.Frame.sendKeys("selenium");
-		
-		
-		
-		
-	}
+	
 }

@@ -22,7 +22,6 @@ private WebDriver driver;
 	
 	@FindBy(xpath="//img[@id='toolimage_6633']")
 	private WebElement assesment; 
-	////div[@class='col-sm-6']//a[2]//img[1]
 	
 	@FindBy(css="main.section-mycourses:nth-child(1) div.container div.row div.col-xs-12.col-md-12 div.actions:nth-child(1) div.row div.col-sm-6:nth-child(1) a:nth-child(2) > img:nth-child(1)")
 	private WebElement addonlineactivity;
@@ -47,40 +46,51 @@ private WebDriver driver;
 	
 	@FindBy(xpath="/html[1]/body[1]/main[1]/section[1]/div[1]/form[1]/fieldset[1]/div[5]/div[1]/div[1]/label[1]/input[1]")
 	private WebElement generateCertificate;
-	public void coursename() {
+	
+	@FindBy(xpath="//div[@class='col-sm-6 text-right']//a[2]//img[1]")
+	private WebElement attachecertificate;
+	
+	@FindBy(xpath="//button[@id='edit_dir_submit']")
+	private WebElement validatebutton;
+	
+	
+	public void clickCourseName() {
 		this.coursename.click();
 	}
-	public void assesmentbutton() {
+	public void clickAssesmentButton() {
 		this.assesment.click();
 	}
-	public void addonline() {
+	public void clickAddOnlineButton() {
 		this.addonlineactivity.click();
 	}
-	public void typeselection() {
+	public void clickTypeSelectionButton() {
 		this.choosetype.click();
 	}
-	public void selectactivity() {
+	public void clickSelectActivity() {
 		this.selectactivity.click();
 	}
-	public void inputweight() {
+	public void inputWeight() {
 		this.weight.clear();
 		this.weight.sendKeys("1");
 	}
-	public void addlearningbutton() {
+	public void addLearningButton() {
 		this.addlearningactivity.click();
 	}
-	public void verifycheckbox() {
+	public void verifyCheckbox() {
 		Boolean b =this.checkbox.isSelected();
 		System.out.println(b);
-		//assertEquals(b,"true");
-		
 		
 	}
-    public void editboxbutton() {
+    public void editBoxButton() {
     	this.Editbox.click();
     }
-    public void generatecertificate() {
+    public void clickGenerateCertificate() {
     	this.generateCertificate.click();
     }
+    public void clickValidateButton() {
+		this.validatebutton.click();
+		}
+    
+    
 	
 }

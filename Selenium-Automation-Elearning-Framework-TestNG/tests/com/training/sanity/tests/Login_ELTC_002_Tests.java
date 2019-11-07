@@ -49,11 +49,12 @@ public class Login_ELTC_002_Tests {
 		driver.quit();
 	}
 	@Test
-	public void validSignUpTest() {
+	public void validLoginTest() {
 		
-       	homepagePOM.username();
-       	homepagePOM.password();
-       	homepagePOM.loginbutton();
+       	homepagePOM.sendUsername();
+       	homepagePOM.sendPassword();
+       	homepagePOM.clickLoginButton();
+       	homepagePOM.validateSuccessMsg();
 		screenShot.captureScreenShot("First");
 	}
 }

@@ -1,5 +1,7 @@
 package com.training.pom;
 
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,19 +32,29 @@ public class HomepagePOM {
 	@FindBy(id ="form-login_submitAuth")
 	private WebElement loginbutton;
 	
+	@FindBy(xpath="//section[@id='cm-content']//p[1]")
+	private WebElement successmsg;
 	
-	public void username() {
+	
+	public void sendUsername() {
 		
-		this.username.sendKeys("reva11222211"); 
+		this.username.sendKeys("abhishek"); 
 	}
-	public void password() {
-		this.password.sendKeys("reva112233");
+	public void sendPassword() {
+		this.password.sendKeys("kehsibha");
 	}
-	public void loginbutton() {
+	public void clickLoginButton() {
 		this.loginbutton.click();
 	}
 	
 	public void signupbutton() {
 		this.signup.click();
+	}
+	public void validateSuccessMsg(){
+		 System.out.println(this.successmsg.getText());
+		 String expectedmsg="Hello Abhishek kumar and welcome,";
+
+			assertTrue(true, expectedmsg);
+			System.out.println("Message should get display in My profile page");
 	}
 }

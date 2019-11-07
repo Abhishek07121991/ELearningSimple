@@ -32,14 +32,14 @@ private WebDriver driver;
 	private WebElement loginbutton;
 	
 	
-	public void username() {
+	public void sendUsername() {
 		
 		this.username.sendKeys("tutor"); 
 	}
-	public void password() {
+	public void sendPassword() {
 		this.password.sendKeys("rotut");
 	}
-	public void loginbutton() {
+	public void clickLoginButton() {
 		this.loginbutton.click();
 	}
 	

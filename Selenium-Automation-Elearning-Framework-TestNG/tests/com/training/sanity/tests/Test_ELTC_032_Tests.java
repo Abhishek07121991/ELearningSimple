@@ -1,4 +1,4 @@
-
+package com.training.sanity.tests;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,20 +12,19 @@ import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
 import com.training.pom.AssesmentPOM;
+import com.training.pom.CreateTestPOM;
 import com.training.pom.HomepagePOM;
 import com.training.pom.Login_TeacherpagePOM;
-import com.training.pom.NewcoursePOM;
-import com.training.pom.ProfilePagePOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class Assesment_ELTC_033_Tests {
+public class Test_ELTC_032_Tests {
 
 	private WebDriver driver;
 	private String baseUrl;
 	private HomepagePOM homepagePOM;
 	private AssesmentPOM assesmentPOM;
-	
+	private CreateTestPOM createtestPOM;
 	private Login_TeacherpagePOM loginTeacherpagePOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
@@ -42,7 +41,7 @@ public class Assesment_ELTC_033_Tests {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		homepagePOM = new HomepagePOM(driver);
 		assesmentPOM =new AssesmentPOM(driver);
-		
+		createtestPOM =new CreateTestPOM(driver);
 		loginTeacherpagePOM=new Login_TeacherpagePOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
@@ -56,17 +55,22 @@ public class Assesment_ELTC_033_Tests {
 		driver.quit();
 	}
 	@Test
-	public void validCreateCourseTest() {
+	public void validCreateNewTest() {
 		
 	
-		loginTeacherpagePOM.username();
-		loginTeacherpagePOM.password();
-		loginTeacherpagePOM.loginbutton();
-		assesmentPOM.coursename();
-		assesmentPOM.assesmentbutton();
-		assesmentPOM.addonline();
-		assesmentPOM.selectactivity();
-		assesmentPOM.typeselection();
+		loginTeacherpagePOM.sendUsername();
+		loginTeacherpagePOM.sendPassword();
+		loginTeacherpagePOM.clickLoginButton();
+		createtestPOM.selectCourseName();
+		createtestPOM.clickTestButton();
+		createtestPOM.createNewTest();
+		createtestPOM.enterTestName();
+		createtestPOM.clickAdvanceSettingButton();
+		createtestPOM.enterPassPercentage();
+		createtestPOM.clickProceedToQuestions();
+		createtestPOM.clickMCQ();
+		createtestPOM.writeQuestions();
+		createtestPOM.addQuestionButton();
 		screenShot.captureScreenShot("First");
 	}
 }

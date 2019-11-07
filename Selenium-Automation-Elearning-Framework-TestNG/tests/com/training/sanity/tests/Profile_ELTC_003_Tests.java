@@ -52,15 +52,15 @@ public class Profile_ELTC_003_Tests {
 		driver.quit();
 	}
 	@Test
-	public void validSignUpTest() {
+	public void validEditProfileTest() {
 		
-       	homepagePOM.username();
-       	homepagePOM.password();
-       	homepagePOM.loginbutton();
-       	profilePagePOM.editprofile();
-       	profilePagePOM.profilepassword();
-       	profilePagePOM.newpassword();
-       	profilePagePOM.confirmnewpassword();
+       	homepagePOM.sendUsername();
+       	homepagePOM.sendPassword();
+       	homepagePOM.clickLoginButton();
+       	profilePagePOM.editProfileButton();
+       	profilePagePOM.sendProfilePassword();
+       	profilePagePOM.sendNewPassword();
+       	profilePagePOM.sendConfirmNewPassword();
        	profilePagePOM.save();
        	
 		screenShot.captureScreenShot("First");

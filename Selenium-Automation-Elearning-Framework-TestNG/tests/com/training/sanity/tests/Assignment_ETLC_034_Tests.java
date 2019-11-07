@@ -12,19 +12,18 @@ import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
 import com.training.pom.AssesmentPOM;
+import com.training.pom.AssignmentPOM;
 import com.training.pom.HomepagePOM;
 import com.training.pom.Login_TeacherpagePOM;
-import com.training.pom.NewcoursePOM;
-import com.training.pom.ProfilePagePOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class Assesment_ELTC_033_Tests {
+public class Assignment_ETLC_034_Tests {
 
 	private WebDriver driver;
 	private String baseUrl;
 	private HomepagePOM homepagePOM;
-	private AssesmentPOM assesmentPOM;
+	private AssignmentPOM assignmentPOM;
 	
 	private Login_TeacherpagePOM loginTeacherpagePOM;
 	private static Properties properties;
@@ -41,7 +40,7 @@ public class Assesment_ELTC_033_Tests {
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		homepagePOM = new HomepagePOM(driver);
-		assesmentPOM =new AssesmentPOM(driver);
+		assignmentPOM =new AssignmentPOM(driver);
 		
 		loginTeacherpagePOM=new Login_TeacherpagePOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
@@ -56,22 +55,19 @@ public class Assesment_ELTC_033_Tests {
 		driver.quit();
 	}
 	@Test
-	public void validAssesmentTest() {
+	public void validAssignmentTest() {
 		
 	
 		loginTeacherpagePOM.sendUsername();
 		loginTeacherpagePOM.sendPassword();
 		loginTeacherpagePOM.clickLoginButton();
-		assesmentPOM.clickCourseName();
-		assesmentPOM.clickAssesmentButton();
-		assesmentPOM.clickAddOnlineButton();
-		assesmentPOM.clickTypeSelectionButton();
-		assesmentPOM.clickSelectActivity();
-		assesmentPOM.inputWeight();
-		assesmentPOM.verifyCheckbox();
-		assesmentPOM.addLearningButton();
-		assesmentPOM.editBoxButton();
-		assesmentPOM.clickGenerateCertificate();
+		assignmentPOM.selectCourse();
+		assignmentPOM.selectAssignmentButton();
+		assignmentPOM.createAssignmentButton();
+		assignmentPOM.assignmentName();
+		assignmentPOM.advanceSettingButton();
+		assignmentPOM.enterMaximmumScore();
+		assignmentPOM.clickValidateButton();
 		
 		screenShot.captureScreenShot("First");
 	}

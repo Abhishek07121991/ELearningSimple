@@ -11,22 +11,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.AssesmentPOM;
 import com.training.pom.HomepagePOM;
-import com.training.pom.Login_TeacherpagePOM;
-import com.training.pom.NewcoursePOM;
-import com.training.pom.ProfilePagePOM;
+import com.training.pom.LostPasswordPOM;
+import com.training.pom.SignupPagePOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class Assesment_ELTC_033_Tests {
+public class Lostpassword_ELTC_004_Tests {
 
 	private WebDriver driver;
 	private String baseUrl;
-	private HomepagePOM homepagePOM;
-	private AssesmentPOM assesmentPOM;
-	
-	private Login_TeacherpagePOM loginTeacherpagePOM;
+	private LostPasswordPOM lostpasswordPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -40,10 +35,7 @@ public class Assesment_ELTC_033_Tests {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		homepagePOM = new HomepagePOM(driver);
-		assesmentPOM =new AssesmentPOM(driver);
-		
-		loginTeacherpagePOM=new Login_TeacherpagePOM(driver); 
+		lostpasswordPOM=new LostPasswordPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -56,23 +48,12 @@ public class Assesment_ELTC_033_Tests {
 		driver.quit();
 	}
 	@Test
-	public void validAssesmentTest() {
+	public void validLostPasswordTest() {
 		
-	
-		loginTeacherpagePOM.sendUsername();
-		loginTeacherpagePOM.sendPassword();
-		loginTeacherpagePOM.clickLoginButton();
-		assesmentPOM.clickCourseName();
-		assesmentPOM.clickAssesmentButton();
-		assesmentPOM.clickAddOnlineButton();
-		assesmentPOM.clickTypeSelectionButton();
-		assesmentPOM.clickSelectActivity();
-		assesmentPOM.inputWeight();
-		assesmentPOM.verifyCheckbox();
-		assesmentPOM.addLearningButton();
-		assesmentPOM.editBoxButton();
-		assesmentPOM.clickGenerateCertificate();
-		
+		lostpasswordPOM.lostPasswordButton();
+		lostpasswordPOM.sendUsername();
+		lostpasswordPOM.clickSendMessage();
+		lostpasswordPOM.validateSuccessMsg();
 		screenShot.captureScreenShot("First");
 	}
 }

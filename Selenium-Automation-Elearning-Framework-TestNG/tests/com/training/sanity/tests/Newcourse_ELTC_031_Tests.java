@@ -58,19 +58,17 @@ public class Newcourse_ELTC_031_Tests {
 	public void validCreateCourseTest() {
 		
 	
-		loginTeacherpagePOM.username();
-		loginTeacherpagePOM.password();
-		loginTeacherpagePOM.loginbutton();
-		profilePagePOM.createcoursebutton();
-		newcoursePOM.coursename();
-		newcoursePOM.Advancesettingbutton();
-		newcoursePOM.categorycoursebutton();
-		newcoursePOM.categorybutton();
-		newcoursePOM.coursecode();
-		newcoursePOM.createcoursebutton();
-		newcoursePOM.addintroductionbutton();
-		newcoursePOM.frame();
-        
+		loginTeacherpagePOM.sendUsername();
+		loginTeacherpagePOM.sendPassword();
+		loginTeacherpagePOM.clickLoginButton();
+		profilePagePOM.createCourseButton();
+		newcoursePOM.enterCourseName();
+		newcoursePOM.advanceSettingButton();
+		newcoursePOM.categoryCourseButton();
+		newcoursePOM.categoryButton();
+		newcoursePOM.enterCourseCode();
+		newcoursePOM.createCourseButton();
+		newcoursePOM.addIntroductionButton();
 		screenShot.captureScreenShot("First");
 	}
 }
