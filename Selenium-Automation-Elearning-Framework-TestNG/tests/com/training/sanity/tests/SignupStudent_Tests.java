@@ -17,7 +17,7 @@ import com.training.pom.SignupPagePOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class SignupStudent_063POM {
+public class SignupStudent_Tests {
 
 	private WebDriver driver;
 	private String baseUrl;

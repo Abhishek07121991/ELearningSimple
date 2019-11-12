@@ -19,7 +19,7 @@ import com.training.pom.ProfilePagePOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class Assesment_ELTC_033_Tests {
+public class Assesment_Tests {
 
 	private WebDriver driver;
 	private String baseUrl;

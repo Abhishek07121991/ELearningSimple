@@ -8,10 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignupPagePOM {
+public class SignupPageErrorPOM {
 	private WebDriver driver; 
 	
-	public SignupPagePOM(WebDriver driver) {
+	public SignupPageErrorPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
@@ -48,7 +48,7 @@ public class SignupPagePOM {
 	@FindBy(id="registration_submit")
 	private WebElement clickonregisterbutton;
 	
-	@FindBy(xpath="//p[contains(text(),'An e-mail has been sent to remind you of your logi')]")
+	@FindBy(xpath="//div[@class='alert alert-warning']")
 	private WebElement validatemessage;
 	
 	public void validatePageTitle() {
@@ -58,26 +58,26 @@ public class SignupPagePOM {
 	}
 	
 		public void sendFirstName() {
-			this.enterfirstname.sendKeys("revaabhiii");
+			this.enterfirstname.sendKeys("qwerty");
 		
 	}
 	
 	public void sendLastName() {
-	this.enterlastname.sendKeys("sharma");
+	this.enterlastname.sendKeys("qwerty");
 	}
 		
 		public void sendEmail() {
-		this.enteremail.sendKeys("revasaaharma11222233@gmail.com");
+		this.enteremail.sendKeys("revasharma11222233@gmail.com");
 		
 	}
 	public void sendUsername()	{
-	this.enterusername.sendKeys("revaaaaaaa0712199112");
+	this.enterusername.sendKeys("qwerty");
 	}
 	public void sendPassword() {
-	this.enterpassword.sendKeys("reva112233");
+	this.enterpassword.sendKeys("qwerty");
 	}
 	public void sendConfirmPassword() {
-		this.enterconfirmpassword.sendKeys("reva112233");
+		this.enterconfirmpassword.sendKeys("qwerty");
 	}
 	
 	public void sendPhoneNumber() {
@@ -86,8 +86,6 @@ public class SignupPagePOM {
 	public void selectLanguage() {
 		this.selectlanguage.click();
 	}
-
-	
 	 public void clickStudent() { 
 		 this.selectstudent.click(); 
 		 }
@@ -95,12 +93,11 @@ public class SignupPagePOM {
 	public void clickRegisterBtn() {
 		this.clickonregisterbutton.click();
 	}
-	public void validateSuccessMsg(){
+	public void validateErrorMsg(){
 		 System.out.println(this.validatemessage.getText());
-		 String expectedmsg="An e-mail has been sent to remind you of your login and password.";
+		 String expectedmsg="This login is already in use";
 
 			assertTrue(true, expectedmsg);
-			System.out.println("Message should get display in profile page");
+			System.out.println("Message should get display after clicking regitser button");
 	}
-	
-}
+	}

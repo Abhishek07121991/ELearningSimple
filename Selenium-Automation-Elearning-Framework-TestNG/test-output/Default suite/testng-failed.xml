@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.EditAssignments_ELTC_035_Tests">
+      <class name="com.training.sanity.tests.SignupPage_ValidateError">
         <methods>
-          <include name="setUpBeforeClass"/>
+          <include name="validSignUpStudentTest"/>
           <include name="setUp"/>
-          <include name="validEditAssignmentTest"/>
           <include name="tearDown"/>
+          <include name="setUpBeforeClass"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.EditAssignments_ELTC_035_Tests -->
+      </class> <!-- com.training.sanity.tests.SignupPage_ValidateError -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

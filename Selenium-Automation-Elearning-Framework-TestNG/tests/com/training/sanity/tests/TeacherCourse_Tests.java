@@ -18,7 +18,7 @@ import com.training.pom.TeachercoursePOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class TeacherCourse_ELTC_064_Tests {
+public class TeacherCourse_Tests {
 
 	private WebDriver driver;
 	private String baseUrl;
